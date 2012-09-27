@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     //getElementById Function
-    function $(x) {
+    function ge(x) {
     var theElement = document.getElementById(x);
     return theElement;
     }
@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function () {
     //Create select field element and populate with options
     function makeCats() {
         var formTag = document.getElementsByTagName("form"), //formTag is an array
-            selectLi = $("select"),
+            selectLi = ge("select"),
             makeSelect = document.createElement("select");
             makeSelect.setAttribute("id", "workouts");
         for (var i = 0, j = workoutType.length; i<j; i++) {
@@ -41,17 +41,17 @@ window.addEventListener("DOMContentLoaded", function () {
     function toggleControls (n) {
         switch(n) {
             case "on":
-                $("workForm").style.display = "none";
-                $("clear").style.display = "inline";
-                $("view").style.display = "none";
-                $("addNew").style.display = "inline";
+                ge("workForm").style.display = "none";
+                ge("clear").style.display = "inline";
+                ge("view").style.display = "none";
+                ge("addNew").style.display = "inline";
                 break;
             case "off":
-                $("workForm").style.display = "block";
-                $("clear").style.display = "inline";
-                $("view").style.display = "inline";
-                $("addNew").style.display = "none";
-                $("items").style.display = "none";
+                ge("workForm").style.display = "block";
+                ge("clear").style.display = "inline";
+                ge("view").style.display = "inline";
+                ge("addNew").style.display = "none";
+                ge("items").style.display = "none";
                 break;
             default:
                 return false;
@@ -74,13 +74,13 @@ window.addEventListener("DOMContentLoaded", function () {
         //Object properties contain array with the form label and input value.
         getSelectedRadio();
         var item                = {};
-            item.date           = ["Date:", $("date").value ];
-            item.name           = ["Name:", $("name").value];
-            item.currentWeight  = ["Current Weight:", $("currentWeight").value];
+            item.date           = ["Date:", ge("date").value ];
+            item.name           = ["Name:", ge("name").value];
+            item.currentWeight  = ["Current Weight:", ge("currentWeight").value];
             item.sex            = ["Sex:", sexValue];
-            item.workoutType    = ["Type of Workout:", $("workouts").value];
-            item.reps           = ["Reps:", $("reps").value];
-            item.comments       = ["Comments:", $("comments").value];
+            item.workoutType    = ["Type of Workout:", ge("workouts").value];
+            item.reps           = ["Reps:", ge("reps").value];
+            item.comments       = ["Comments:", ge("comments").value];
             //Save data into Local Storage: Use stringify to convert our object to a string
             localStorage.setItem(id, JSON.stringify(item) );
             alert("Workout has been added!");
@@ -98,7 +98,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var makeList = document.createElement("ul");
         makeDiv.appendChild(makeList);
         document.body.appendChild(makeDiv);
-        $("items").style.display = "block";
+        ge("items").style.display = "block";
         for(var i = 0, len = localStorage.length; i<len; i++) {
             var makeLi = document.createElement("li");
             var linksLi = document.createElement("li");
@@ -172,9 +172,9 @@ window.addEventListener("DOMContentLoaded", function () {
         toggleControls("off");
         
         //Populate the form fields with the current localStorage values
-        $("date").value = item.date[1];
-        $("name").value = item.name[1];
-        $("currentWeight").value = item.currentWeight[1];
+        ge("date").value = item.date[1];
+        ge("name").value = item.name[1];
+        ge("currentWeight").value = item.currentWeight[1];
         var radios = document.forms[0].sex;
         for(var i = 0; i<radios.length; i++){
             if(radios.value == "Male" && item.sex[1] == "Male"){
@@ -183,15 +183,15 @@ window.addEventListener("DOMContentLoaded", function () {
                 radios[i].setAttribute("checked", "checked");
             }
         }
-        $("workouts").value = item.workoutType[1];
-        $("reps").value = item.reps[1];
-        $("comments").value = item.comments[1];
+        ge("workouts").value = item.workoutType[1];
+        ge("reps").value = item.reps[1];
+        ge("comments").value = item.comments[1];
         
         //Remove the intitial listener from the input "save contact" button.
         save.removeEventListener("click", storeData);
         //Change Submit Button Value to Edit Button
-        $("submit").value = 'Edit Contact';
-        var editSubmit = $("submit");
+        ge("submit").value = 'Edit Contact';
+        var editSubmit = ge("submit");
         //Save the key value established in this function as a property of the editSubmit event
         //so we can use that value when we save the data we edited.
         editSubmit.addEventListener("click", validate);
@@ -223,9 +223,9 @@ window.addEventListener("DOMContentLoaded", function () {
     
     function validate (e){
         //Define the elements we want to check.
-        var getWorkoutType = $("workouts");
-        var getSex = $("sex");
-        var getName = $("name");
+        var getWorkoutType = ge("workouts");
+        var getSex = ge("sex");
+        var getName = ge("name");
         
         //Reset Error Messages
         errMsg.innerHTML = "";
@@ -275,15 +275,15 @@ window.addEventListener("DOMContentLoaded", function () {
     //Variable defaults
     var workoutType = ["--Choose a workout--", "arms", "back", "legs", "cardio"],
         sexValue,
-        errMsg = $("errors");
+        errMsg = ge("errors");
     makeCats();
     
     //Set Link and Submit Click Events
-    var displayLink = $("view");
+    var displayLink = ge("view");
     displayLink.addEventListener("click", getData);
-    var clearLink = $("clear");
+    var clearLink = ge("clear");
     clearLink.addEventListener("click", clearLocal);
-    var save= $("submit");
+    var save= ge("submit");
     save.addEventListener("click", validate);
     
 
