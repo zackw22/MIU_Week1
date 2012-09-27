@@ -7,7 +7,7 @@ html{
 }
 body{
     letter-spacing: 0.025em;
-    background-color: #f4ad14;
+    background-color: #bac0ac;
 }
 
 h1{
@@ -20,7 +20,7 @@ h1{
 	color: #242e30;
         text-align: center;
         border: solid 1px;
-        background-color: #cfcfcf;
+        background-color: #98a89e;
         
         
 
@@ -45,7 +45,7 @@ a:hover{
 fieldset{
 	font: 18px times ;
 	margin: 30px 10px;
-	background: #cfcfcf;
+	background: #98a89e;
 
 }
 
@@ -73,7 +73,7 @@ p{
     font-family: sans-serif;
     letter-spacing: 0.025em;
     border: solid 1px;
-    background-color: #cfcfcf;
+    background-color: #98a89e;
     text-align: left;
 }
 
