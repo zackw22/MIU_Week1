@@ -1,5 +1,5 @@
-//Project 4 Week 4
-//Visual Frameworks
+//Project 1 Week 1
+//MIU
 //stylesheet css
 
 html{
@@ -109,5 +109,46 @@ header{
     transition-duration: 0.2s;
 }
 ul, menu, dir{
+    border: solid 1px;    
+}
+
+ul#categories .typeOfWorkouts{
+    border:solid 1px;
+    background-color:#98a89e;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 460px, 50px;
+    
+}
+ul#categories .date{
+    border:solid 1px;
+    background-color:#98a89e;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    
+}
+ul#categories .name{
+    border:solid 1px;
+    background-color:#98a89e;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+ul#categories .weight{
+    border:solid 1px;
+    background-color:#98a89e;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+a.logo{
+    background-image: url("https://picasaweb.google.com/101619145822595854359/School#5793060394457929730") no-repeat;
+}
+p{
     border: solid 1px;
 }
+
